@@ -1,0 +1,20 @@
+{
+  "name": "ddweerasiri-website",
+  "version": "0.0.1",
+  "description": "Denis Weerasiri web site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "author": "Denis Weerasiri",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "axios": "^0.16.2",
+    "next": "^3.2.2",
+    "react": "^15.6.2",
+    "react-dom": "^15.6.2"
+  }
+}
