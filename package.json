@@ -4,17 +4,20 @@
   "description": "Denis Weerasiri web site",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "next",
     "build": "next build",
+    "test": "mocha tests/hyperlink-test.js",
     "start": "next start"
   },
   "author": "Denis Weerasiri",
   "license": "Apache-2.0",
   "dependencies": {
     "axios": "^0.16.2",
+    "chromedriver": "^2.33.2",
+    "mocha": "^4.0.1",
     "next": "^3.2.2",
     "react": "^15.6.2",
-    "react-dom": "^15.6.2"
+    "react-dom": "^15.6.2",
+    "selenium-webdriver": "^3.6.0"
   }
 }
