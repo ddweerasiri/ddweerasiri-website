@@ -8,6 +8,7 @@ sudo rm -rf node_modules
 sudo npm install
 sudo npm run build
 sudo nohup npm run start &
+sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 3000
 
 if [ $? -eq 0 ]
 then
