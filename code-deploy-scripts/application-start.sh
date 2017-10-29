@@ -2,7 +2,7 @@
 
 echo "Running application-start.sh..."
 cd /home/ec2-user/ddweerasiri-website
-npm run start
+sudo npm run start
 
 if [ $? -eq 0 ]
 then
