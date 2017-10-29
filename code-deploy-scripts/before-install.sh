@@ -14,6 +14,7 @@ echo "Installed npm version:"
 npm -v
 
 #installing all the app-dependencies which are mentioned in package.json
+cd /home/ec2-user/ddweerasiri-website
 npm install
 
 echo "Finished running before-install.sh..."
