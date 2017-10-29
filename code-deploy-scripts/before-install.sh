@@ -13,4 +13,7 @@ node -v
 echo "Installed npm version:"
 npm -v
 
+#installing all the app-dependencies which are mentioned in package.json
+npm install
+
 echo "Finished running before-install.sh..."
