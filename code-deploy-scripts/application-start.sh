@@ -7,7 +7,7 @@ cd /home/ec2-user/ddweerasiri-website
 sudo rm -rf node_modules
 sudo npm install
 sudo npm run build
-sudo npm run start
+sudo nohum npm run start &
 
 if [ $? -eq 0 ]
 then
