@@ -4,3 +4,14 @@ os: linux
 files:
   - source: ./
     destination: /home/ec2-user/ddweerasiri-website
+
+hooks:
+  BeforeInstall:
+    - location: code-deploy-scripts/before-install.sh
+      timeout: 120
+      runas: ec2-user
+
+  ApplicationStart:
+    - location: code-deploy-scripts/application-start.sh
+      timeout: 60
+      runas: ec2-user

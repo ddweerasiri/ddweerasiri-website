@@ -31,5 +31,3 @@ deploy:
     deployment_group: ddweerasiri-website-deployment-group
     region: ap-southeast-2
     on: *2
-
-
