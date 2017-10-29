@@ -32,7 +32,7 @@ export default () => (
       </div>
       <div id="ct2">
         <MainLink href="https://twitter.com/ddweerasiri">Twitter</MainLink>
-        <!--<MainLink href="/blog">Blog</MainLink>-->
+        {/*<MainLink href="/blog">Blog</MainLink>*/}
         <MainLink href="https://github.com/ddweerasiri">GitHub</MainLink>
       </div>
         <div id="intro">
