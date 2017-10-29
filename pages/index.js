@@ -33,8 +33,11 @@ export default () => (
       <div id="ct2">
         <MainLink href="https://twitter.com/ddweerasiri">Twitter</MainLink>
         <MainLink href="/blog">Blog</MainLink>
-        <MainLink href="https://github.com/ddweerasiri">My GitHub Profile</MainLink>
+        <MainLink href="https://github.com/ddweerasiri">GitHub</MainLink>
       </div>
+        <div className="footer">
+            <h4>Please check back for an update soon.</h4>
+        </div>
     </div>
     <style jsx>{`
       .wrapper {
