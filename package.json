@@ -15,8 +15,7 @@
     "axios": "^0.16.2",
     "next": "^3.2.2",
     "react": "^15.6.2",
-    "react-dom": "^15.6.2",
-
+    "react-dom": "^15.6.2"
   },
   "devDependencies": {
     "chromedriver": "^2.33.2",
