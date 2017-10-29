@@ -11,7 +11,7 @@ install:
   - npm run build
 
 script:
-  - zip -r latest *
+  - zip -rq latest * .*
   - mkdir -p dpl_cd_upload
   - mv latest.zip dpl_cd_upload/latest.zip
 
