@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo "Running before-install.sh..."
+echo "Running after-install.sh..."
 
 sudo yum install -y gcc-c++ make
 curl -sL https://rpm.nodesource.com/setup_6.x | sudo -E bash -
@@ -19,9 +19,9 @@ npm install
 
 if [ $? -eq 0 ]
 then
-  echo "Finished running before-install.sh..."
+  echo "Finished running after-install.sh..."
   exit 0
 else
-  echo "Failed running before-install.sh..." >&2
+  echo "Failed running after-install.sh..." >&2
   exit 1
 fi
