@@ -13,10 +13,6 @@ node -v
 echo "Installed npm version:"
 npm -v
 
-#installing all the app-dependencies which are mentioned in package.json
-#cd /home/ec2-user/ddweerasiri-website
-#sudo npm install
-
 if [ $? -eq 0 ]
 then
   echo "Finished running after-install.sh..."

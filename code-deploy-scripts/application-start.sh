@@ -2,6 +2,11 @@
 
 echo "Running application-start.sh..."
 cd /home/ec2-user/ddweerasiri-website
+
+#installing all the app-dependencies which are mentioned in package.json
+sudo rm -rf node_modules
+sudo npm install
+sudo npm run build
 sudo npm run start
 
 if [ $? -eq 0 ]
