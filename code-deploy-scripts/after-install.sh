@@ -15,7 +15,7 @@ npm -v
 
 #installing all the app-dependencies which are mentioned in package.json
 cd /home/ec2-user/ddweerasiri-website
-npm install
+sudo npm install
 
 if [ $? -eq 0 ]
 then
