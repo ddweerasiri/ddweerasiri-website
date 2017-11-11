@@ -716,6 +716,21 @@
                 }
               ]
             }
+          },
+          {"PolicyName": "S3AccessPolicy",
+            "PolicyDocument": {
+              "Version": "2012-10-17",
+              "Statement": [
+                {
+                  "Action": [
+                    "s3:Get*",
+                    "s3:List*"
+                  ],
+                  "Effect": "Allow",
+                  "Resource": "*"
+                }
+              ]
+            }
           }
         ]
       }
@@ -741,7 +756,6 @@
       "Type": "AWS::EC2::Instance",
       "Metadata": {
         "Comment1": "Install the cloud deploy agent",
-        "Comment2": "Install node.js and npm (NOT YET)",
         "AWS::CloudFormation::Init": {
           "configSets": {
             "install_all": [
@@ -1064,6 +1078,62 @@
             "CidrIp": "0.0.0.0/0"
           }
         ]
+      }
+    },
+    "codeDeployApplication": {
+      "Type": "AWS::CodeDeploy::Application",
+      "DependsOn":"WebServerInstance",
+      "Properties" : {
+        "ApplicationName" : "ddweerasiri-website-auto"
+      }
+    },
+    "codeDeployDeploymentGroup": {
+      "Type": "AWS::CodeDeploy::DeploymentGroup",
+      "Properties" : {
+        "ApplicationName" : {"Ref" : "codeDeployApplication"},
+        "Deployment" : {
+          "Description" : "S3 based deployment",
+          "IgnoreApplicationStopFailures" : "false",
+          "Revision" : {
+            "RevisionType" : "S3",
+            "S3Location" : {
+              "Bucket" : "ddweerasiri-website-distro-repo",
+              "Key" : "latest.zip",
+              "BundleType" : "Zip"
+            }
+          }
+        },
+        "Ec2TagFilters" : [{
+          "Key" : "group",
+          "Value" : "ddweerasiri-website-ec2-instance",
+          "Type" : "KEY_AND_VALUE"
+        }],
+        "ServiceRoleArn" : {
+          "Fn::GetAtt": [
+            "CodeDeployServiceRoleAuto",
+            "Arn"
+          ]}
+      }
+    },
+    "CodeDeployServiceRoleAuto": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Sid": "1",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": [
+                  "codedeploy.amazonaws.com"
+                ]
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        },
+        "ManagedPolicyArns": ["arn:aws:iam::aws:policy/service-role/AWSCodeDeployRole"],
+        "Path": "/"
       }
     }
   },
