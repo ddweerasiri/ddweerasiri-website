@@ -5,13 +5,6 @@ files:
   - source: ./
     destination: /home/ec2-user/ddweerasiri-website
 
-permissions:
-    - object: /home/ec2-user/ddweerasiri-website
-      owner: ec2-user
-      mode: 750
-      type:
-        - file
-
 hooks:
   AfterInstall:
     - location: code-deploy-scripts/after-install.sh
