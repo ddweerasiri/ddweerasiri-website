@@ -1014,7 +1014,7 @@
         "Tags": [
           {
             "Key": "group",
-            "Value": "ddweerasiri-website-ec2-instance"
+            "Value": "ddweerasiri-website-ec2-instance-auto"
           }
         ],
         "UserData": {
@@ -1105,7 +1105,7 @@
         },
         "Ec2TagFilters" : [{
           "Key" : "group",
-          "Value" : "ddweerasiri-website-ec2-instance",
+          "Value" : "ddweerasiri-website-ec2-instance-auto",
           "Type" : "KEY_AND_VALUE"
         }],
         "ServiceRoleArn" : {
