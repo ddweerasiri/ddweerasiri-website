@@ -31,7 +31,7 @@ deploy:
     bucket: ddweerasiri-website-distro-repo
     key: latest.zip
     bundle_type: zip
-    application: ddweerasiri-website
-    deployment_group: ddweerasiri-website-deployment-group
+    application: ddweerasiri-website-auto
+    deployment_group: ddweerasiri-website-deployment-group-auto
     region: ap-southeast-2
     on: *2

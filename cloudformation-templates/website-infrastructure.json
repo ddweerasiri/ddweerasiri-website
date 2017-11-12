@@ -1091,6 +1091,8 @@
       "Type": "AWS::CodeDeploy::DeploymentGroup",
       "Properties" : {
         "ApplicationName" : {"Ref" : "codeDeployApplication"},
+        "DeploymentGroupName": "ddweerasiri-website-deployment-group-auto",
+        "DeploymentConfigName": "CodeDeployDefault.AllAtOnce",
         "Deployment" : {
           "Description" : "S3 based deployment",
           "IgnoreApplicationStopFailures" : "false",
