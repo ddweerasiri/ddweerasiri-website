@@ -1223,7 +1223,7 @@
           "Fn::Join" : [ "", [ {"Ref" : "DNSName"} ,"."] ]
         },
         "Type" : "A",
-        "TTL" : "900",
+        "TTL" : "300",
         "ResourceRecords" : [
           {"Ref": "eIPOfWebServer"}
         ]
